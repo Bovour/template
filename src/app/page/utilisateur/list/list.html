@@ -1,0 +1,41 @@
+ <div class="container py-4 mt-5">
+
+  <div class="d-flex justify-content-between align-items-center mb-3">
+    <h4>Utilisateurs</h4>
+
+    <!-- OUVERTURE DIALOG -->
+    <button mat-raised-button color="primary" (click)="openAddDialog()">
+      <i class="bi bi-plus-circle"></i> Ajouter
+    </button>
+  </div>
+
+  <table class="table table-hover text-center align-middle">
+    <thead class="table-light">
+      <tr>
+        <th>ID</th>
+        <th>Nom</th>
+        <th>Email</th>
+        <th>Rôle</th>
+        <th>Entreprise</th>
+        <th>Actions</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let u of utilisateurs">
+        <td>{{ u.id }}</td>
+        <td>{{ u.nom }}</td>
+        <td>{{ u.email }}</td>
+        <td><span class="badge bg-info">{{ u.roleNom }}</span></td>
+        <td>{{ u.entreprise }}</td>
+        <td class="d-flex justify-content-center gap-2">
+          <button mat-raised-button color="accent" (click)="openUpdateDialog(u)">
+            <i class="bi bi-pencil"></i>
+          </button>
+          <button mat-raised-button color="warn" (click)="delete(u.id)">
+            <i class="bi bi-trash"></i>
+          </button>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</div>

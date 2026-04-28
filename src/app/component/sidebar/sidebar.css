@@ -1,0 +1,183 @@
+ /* =========================
+   SIDEBAR PRINCIPALE
+========================= */
+.sidebar {
+  height: calc(100vh - 56px);
+  width: 250px;
+  position: fixed;
+  top: 56px;
+  left: 0;
+
+  background: #ffffff;
+  border-right: 1px solid rgba(0,0,0,0.06);
+
+  display: flex;
+  flex-direction: column;
+
+  transition: all 0.35s ease;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.05);
+
+  z-index: 1040;
+}
+
+/* =========================
+   HEADER
+========================= */
+.sidebar-header {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+
+  padding: 18px 20px;
+  border-bottom: 1px solid rgba(0,0,0,0.05);
+
+  font-weight: 700;
+  font-size: 16px;
+  color: #0d6efd;
+}
+
+.sidebar-header .logo {
+  width: 38px;
+  height: 38px;
+  border-radius: 10px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  background: rgba(13,110,253,0.1);
+}
+
+/* =========================
+   NAVIGATION
+========================= */
+.sidebar-nav {
+  flex: 1;
+  overflow-y: auto;
+  padding: 12px 0;
+}
+
+/* =========================
+   LIENS SIDEBAR
+========================= */
+.sidebar .nav-link {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+
+  padding: 11px 15px;
+  margin: 4px 10px;
+
+  border-radius: 12px;
+
+  color: #495057;
+  font-weight: 500;
+
+  transition: all 0.25s ease;
+  position: relative;
+
+  text-decoration: none;
+}
+
+/* HOVER PREMIUM */
+.sidebar .nav-link:hover {
+  background: linear-gradient(90deg, #eef4ff, #ffffff);
+  color: #0d6efd;
+  transform: translateX(5px);
+}
+
+/* ACTIVE */
+.sidebar .nav-link.active {
+  background: #0d6efd;
+  color: #fff;
+  box-shadow: 0 6px 18px rgba(13,110,253,0.25);
+}
+
+/* ICONS */
+.sidebar i {
+  font-size: 18px;
+}
+
+/* =========================
+   SUBMENU
+========================= */
+.submenu {
+  padding-left: 18px;
+  animation: fadeSlide 0.25s ease;
+}
+
+.sub-link {
+  font-size: 0.9rem;
+  color: #6c757d;
+  padding-left: 20px;
+}
+
+.sub-link:hover {
+  color: #0d6efd;
+}
+
+/* animation submenu */
+@keyframes fadeSlide {
+  from {
+    opacity: 0;
+    transform: translateY(-5px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* =========================
+   FOOTER (LOGOUT)
+========================= */
+.sidebar-footer {
+  padding: 12px;
+  border-top: 1px solid rgba(0,0,0,0.05);
+}
+
+/* bouton logout PRO */
+.logout-btn {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+
+  padding: 10px 15px;
+  border-radius: 12px;
+
+  color: #dc3545;
+  font-weight: 600;
+
+  transition: all 0.25s ease;
+  text-decoration: none;
+
+  background: transparent;
+}
+
+/* hover logout */
+.logout-btn:hover {
+  background: #ffe5e5;
+  transform: translateX(5px);
+  color: #b02a37;
+}
+
+/* icon logout */
+.logout-btn i {
+  color: #dc3545;
+}
+
+/* =========================
+   CLOSED STATE (TOGGLE)
+========================= */
+.sidebar.closed {
+  transform: translateX(-100%);
+}
+
+/* =========================
+   RESPONSIVE MOBILE
+========================= */
+@media (max-width: 992px) {
+  .sidebar {
+    display: none;
+  }
+}

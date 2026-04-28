@@ -1,0 +1,55 @@
+ <div class="sidebar" [class.closed]="!isOpen">
+  <nav class="sidebar-nav">
+
+    <ul class="nav flex-column">
+
+      <!-- DASHBOARD -->
+      <li class="nav-item">
+        <a class="nav-link active" routerLink="/dashboard">
+          <i class="bi bi-speedometer2"></i>
+          <span>Dashboard</span>
+        </a>
+      </li>
+
+
+<!-- UTILISATEURS 2 -->
+<li class="nav-item">
+
+  <a class="nav-link"
+     data-bs-toggle="collapse"
+     data-bs-target="#usersMenu2"
+     aria-expanded="false">
+
+    <i class="bi bi-people"></i>
+    <span>Utilisateur</span>
+    <i class="bi bi-chevron-down ms-auto small"></i>
+
+  </a>
+
+  <div class="collapse submenu" id="usersMenu2">
+
+    <a class="nav-link sub-link" routerLink="/dashboard/users">
+      <i class="bi bi-list-ul"></i> Liste
+    </a>
+ 
+
+  </div>
+</li>
+      
+
+     
+    </ul>
+
+  </nav>
+
+  <!-- FOOTER LOGOUT PRO -->
+  <div class="sidebar-footer">
+
+    <a class="logout-btn" routerLink="/logout">
+      <i class="bi bi-box-arrow-right"></i>
+      <span>Déconnexion</span>
+    </a>
+
+  </div>
+
+</div>
